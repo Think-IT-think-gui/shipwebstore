@@ -1,0 +1,35 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Document Upload</title>
+<link href="{% static 'styles/Upload_D.css' %}" rel="stylesheet">
+<script>
+$(document).ready(function()
+{
+   $("#FileUpload1 :file").on('change', function()
+   {
+      var input = $(this).parents('.input-group').find(':text');
+      input.val($(this).val());
+   });
+});
+</script>
+</head>
+<body>
+
+<div id="wb_Image1" style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-index:1;">
+<img src="{% static 'styles/images/3.jpg' %}" id="Image1" alt=""></div>
+<div id="FileUpload1" class="input-group" style="position:absolute;left:30%;top:30vmax;width:40%;height:20px;z-index:2;">
+<input class="form-control" type="text" readonly="">
+<label class="input-group-btn">
+<form action="action/" method="post" enctype="multipart/form-data"> 
+ {% csrf_token %} 
+ <input type="file" accept=".pdf" name="file_up"  style="display:none;"><span class="btn">Browse...</span>
+ </label>
+ </div>
+ <input type="submit" id="Button1"  value="Upload Document" style="position:absolute;left:40%;top:45vmax;width:19vmax;height:6vmax;z-index:3;">
+</form>
+</body>
+</body>
+</html>

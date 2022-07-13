@@ -1,0 +1,29 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Document Upload</title>
+<link href="{% static 'styles/Upload_D.css' %}" rel="stylesheet">
+<script>
+$(document).ready(function()
+{
+   $("#FileUpload1 :file").on('change', function()
+   {
+      var input = $(this).parents('.input-group').find(':text');
+      input.val($(this).val());
+   });
+});
+</script>
+</head>
+<body>
+
+<div id="wb_Image1" style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-index:1;">
+<img src="{% static 'styles/images/3.jpg' %}" id="Image1" alt=""></div>
+  <form  id="SiteSearch1_form" method="post" action="new_key" >
+   {% csrf_token %} 
+   <input type="text" id="SiteSearch1" style="position:absolute;left:25%;top:30%;width:50%;height:10vmax;z-index:2;border: 2px solid #CCCCCC;border-radius: 20px;background-color: transparent;background-image: none;color: #d3d1d1;font-family: Arial;font-weight: bold;font-style: normal;font-size: 60px;line-height: 55px;padding: 4px 4px 4px 4px;margin: 0;text-align: left;" name="Number_code" spellcheck="false" placeholder="New Serial Key.."> 
+   <input type="submit" id="Button1" name="" value="Update Code" style="position:absolute;left:40%;top:45vmax;width:19vmax;height:6vmax;z-index:3;">
+  </form>
+</body>
+</html>

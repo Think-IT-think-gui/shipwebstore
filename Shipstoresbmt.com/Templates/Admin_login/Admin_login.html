@@ -1,0 +1,71 @@
+<!doctype html>
+{% load static %}
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="{% static 'styles/font-awesome.min.css' %}" rel="stylesheet">
+<link href="{% static 'styles/dividers.css' %}" rel="stylesheet">
+<link href="{% static 'styles/Admin_login.css' %}" rel="stylesheet">
+<script src="{% static 'js/Admin_login/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/Admin_login/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/Admin_login/popper.min.js' %}"></script>
+<script src="{% static 'js/Admin_login/util.min.js' %}"></script>
+<script src="{% static 'js/Admin_login/collapse.min.js' %}"></script>
+<script src="{% static 'js/Admin_login/dropdown.min.js' %}"></script>
+
+<script src="{% static 'js/Admin_login/Admin_login.js' %}"></script>
+</head>
+<body>
+   <div style="overflow:hidden">
+      <div id="wb_header">
+         <div id="header">
+            <div class="row">
+               <div class="col-1">
+                  <div id="wb_Breadcrumb1" style="display:inline-block;width:100%;z-index:0;vertical-align:top;">
+                     <ul id="Breadcrumb1">
+                        <li><a href="../">ShipStores</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-2">
+                  <div id="wb_ThemeableMenu1" style="display:inline-block;width:100%;z-index:1;">
+                     <div id="ThemeableMenu1" class="ThemeableMenu1" style="width:100%;height:auto !important;">
+                        <div class="container">
+                           <div class="navbar-header">
+                              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".ThemeableMenu1-navbar-collapse">
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                              </button>
+                           </div>
+                           <div class="ThemeableMenu1-navbar-collapse collapse">
+                              <ul class="nav navbar-nav">
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="wb_Image1" style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-index:6;">
+         <img src="{% static 'styles/images/7.jpg' %}" style="width:100%;height:100%" id="Image1" alt="">
+      </div>
+      <div id="wb_Shape1" style="position:absolute;left:0px;top:0px;width:100%;height:100%;opacity:0.30;z-index:7;">
+        
+         <img src="{% static 'styles/images/img0004.png' %}" id="Shape1" alt=""   style="width:100%;height:100%" >
+      </div>
+      <form name="Submit_logins" method="post" action="" >
+         {% csrf_token %} 
+         <input type="text" id="SiteSearch1" style="position:absolute;left:35%;top:50%;width:30vmax;height:46px;z-index:8;" name="User_name" placeholder="Username.." >
+         <input type="submit" id="Button1"  value="Login" style="position:absolute;left:45%;top:70%;width:12vmax;height:5vmax;z-index:9;">
+         <input type="password" id="SiteSearch2" style="position:absolute;left:35%;top:60%;width:30vmax;height:46px;z-index:10;" name="Password_value"  placeholder="Password.." >
+      </form>
+      <div id="wb_IconFont1" style="position:absolute;left:40%;top:25%;width:20vmax;height:20vmax;text-align:center;z-index:11;">
+         <div id="IconFont1" style="width:20vmax;height:20vmax"><i class="fa fa-user-circle-o"></i></div>
+      </div>
+   </div></body>
+</html>
